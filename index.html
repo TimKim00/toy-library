@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TOP Library Project</title>
+</head>
+<body>
+    <dialog autofocus>
+        <form id="form">
+            <p id="text">Add New Book</p>
+            <input type="text" name="title" id="add-title" placeholder="Add Title" required>
+            <input type="text" name="author" id="add-author" placeholder="Add Author">
+            <input type="number" name="pages" id="add-pages" placeholder="Add the number of Pages" min=0>
+            <input type="checkbox" name="is_read" id="is_read">
+            <button type="submit" id="close">Add Book</button>
+        </form>
+      </dialog>
+    <div class="header">
+        <div class="welcome">
+            <img src="assets/library-book-svgrepo-com.svg" alt="" id="logo">
+            <p id="text">
+                Welcome to your Library!
+                Update your Library
+            </p>
+            <button id="add" autofocus>Add Book</button>
+        </div>
+    </div>
+    <div class="dashboard">
+        <h1>Your Books</h1>
+        <div class="bookshelf">
+            <div class="card">
+                <div id="title">Title</div>
+                <div id="read">Read?</div>
+                <div id="author">Author</div>
+                <div id="pages">0 Pages</div>
+                <button id="toggle-read">Read</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
