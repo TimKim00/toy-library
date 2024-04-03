@@ -12,34 +12,30 @@
             <p id="text">Add New Book</p>
             <input type="text" name="title" id="add-title" placeholder="Add Title" required>
             <input type="text" name="author" id="add-author" placeholder="Add Author">
-            <input type="number" name="pages" id="add-pages" placeholder="Add the number of Pages" min=0>
-            <input type="checkbox" name="is_read" id="is_read">
+            <input type="number" name="pages" id="add-pages" placeholder="Length (pages)" min=0>
+            <div class="wrapper" id="is_read">
+                <label for="is_read">Already Read?</label>
+                <input type="checkbox" name="is_read" id="is_read">
+            </div>
             <button type="submit" id="close">Add Book</button>
         </form>
       </dialog>
     <div class="header">
         <div class="welcome">
             <img src="assets/library-book-svgrepo-com.svg" alt="" id="logo">
-            <p id="text">
-                Welcome to your Library!
+            <div id="text">
+                <h3>Welcome to your Library!</h3> 
                 Update your Library
-            </p>
-            <button id="add" autofocus>Add Book</button>
+            </div>
         </div>
+        <button id="add" autofocus>Add Book</button>
     </div>
     <div class="dashboard">
         <h1>Your Books</h1>
         <div class="bookshelf">
-            <div class="card">
-                <div id="title">Title</div>
-                <div id="read">Read?</div>
-                <div id="author">Author</div>
-                <div id="pages">0 Pages</div>
-                <button id="toggle-read">Read</button>
-            </div>
+            Please 'Add Book' to your Library!
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html> 

@@ -24,6 +24,10 @@ function addBookToLibrary(book) {
     //   Adds the BOOK to MYLIBRARY array if the BOOK not in the library.
     //   Returns TRUE if BOOK added. FALSE otherwise.
 
+    if (myLibrary.length == 0) {
+        shelf.innerHTML = '';
+    }
+
     for (const b in myLibrary) {
         if (bookEqual(b, book))
             return false;
@@ -50,6 +54,11 @@ function removeBookFromLibrary(book) {
 
     myLibrary.splice(idx, 1);
     displayBooks();
+
+    if (myLibrary.length == 0) {
+        shelf.textContent = "Please 'Add Book' to your Library!";
+    }
+
     return true;
 }
 
@@ -65,14 +74,26 @@ function addBookToDisplay(book) {
     const read = document.createElement('div');
     read.id = "read";
     read.textContent = book.is_read ? "Read" : "Unread";
+    read.style.color = book.is_read ? "rgb(36, 161, 36)" : "goldenrod";
 
     const author = document.createElement('div');
     author.id = "author";
-    author.textContent = book.author;
+    const text_a = document.createElement('h6');
+    text_a.id="card-descriptor";
+    text_a.textContent = "Author: ";
+    author.appendChild(text_a);
+    author.append(book.author);
 
     const num_pages = document.createElement('div');
     num_pages.id = "pages";
-    num_pages.textContent = book.num_pages;
+    const text_p = document.createElement('h6');
+    text_p.id="card-descriptor";
+    text_p.textContent = "Length (page): ";
+    num_pages.appendChild(text_p);
+    num_pages.append(book.num_pages);
+
+    const buttons = document.createElement('div');
+    buttons.id = "buttons";
 
     const toggleRead = document.createElement('button');
     toggleRead.id = book.is_read ? "toggle-read" : "toggle-unread";
@@ -81,16 +102,27 @@ function addBookToDisplay(book) {
     toggleRead.addEventListener('click', () => {
         book.is_read = !book.is_read;
         read.textContent = book.is_read ? "Read" : "Unread";
+        read.style.color = book.is_read ? "rgb(36, 161, 36)" : "goldenrod";
 
         toggleRead.textContent = !book.is_read ? "Read" : "Unread";
         toggleRead.id = book.is_read ? "toggle-read" : "toggle-unread";
     })  
 
+    const removeButton = document.createElement('button');
+    removeButton.id = "remove";
+    
+    removeButton.addEventListener('click', () => {
+        removeBookFromLibrary(book);
+    })  
+
+    buttons.appendChild(toggleRead);
+    buttons.appendChild(removeButton);
+
     bookElement.appendChild(title);
-    bookElement.appendChild(read);
+    title.appendChild(read);
     bookElement.appendChild(author);
     bookElement.appendChild(num_pages);
-    bookElement.appendChild(toggleRead);
+    bookElement.appendChild(buttons);
 
     shelf.appendChild(bookElement);
 }

@@ -1,4 +1,205 @@
 
 #logo {
     height:5rem;
+    transition: filter 0.5s ease-in-out;
+}
+
+#logo:hover {
+    filter: drop-shadow(0 0 0.75rem gray);
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    padding: 2rem 20vw;
+    gap: 2rem;
+}
+
+.header {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-row: 1 / 2
+}
+
+.dashboard {
+    grid-row: 2 / 5; 
+}
+ 
+.welcome {
+    display: flex;
+    gap: 2rem;
+    font-weight: bold;
+} 
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 4px;
+}
+
+button#add {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(155, 127, 91, 0.8);
+    color:white;
+    box-shadow: 3px 3px 5px 1px gray;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05); 
+}
+
+#remove {
+    background-image: url("assets/delete-trash-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem;
+    border: none;
+    background-color: inherit;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: inset 10px 0em gold;
+    border-radius: 10px;
+    width: 17rem;
+    align-items: center;
+}
+
+#title {
+    font-size: larger;
+    font-weight: bolder;
+    padding-bottom: 0.5rem;
+    display: flex;
+    border-bottom: 2px solid gray;
+    justify-content: space-between;
+}
+
+#read {
+    padding-right: 1rem;
+    font-size: small;
+}
+
+#author, #pages {  
+    display: flex;
+    align-items: center;
+}
+
+#author {
+    margin-top: -2rem;
+}
+
+#pages {
+    margin-top: -4rem;
+}
+
+#card-descriptor {
+    color: darkgoldenrod;
+    font-size: 1rem;
+    width: 60%;
+    margin-right: -2rem;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#toggle-unread {
+    background-color: rgb(36, 161, 36);
+}
+
+#toggle-read {
+    background-color: goldenrod;
+}
+
+#toggle-read, #toggle-unread {
+    border: none;
+    border-radius: 10px;
+    width: 5rem;
+    height: 2.5rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: 3px 3px 5px 1px gray;
+    transition: transform 0.3s ease;
+}
+
+#toggle-read:hover, #toggle-unread:hover {
+    transform: scale(1.05);
+}
+
+#remove {
+    padding-right: 4rem;
+    transition: transform 0.5 ease;
+}
+
+#remove:hover {
+    transform: scale(1.1); 
+}
+
+.bookshelf {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Dialog */
+dialog {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(217, 196, 169);
+    box-shadow: 0px 0px 10px 1px gray;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem 2rem;
+    justify-items: center;
+}
+
+
+input {
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+#text {
+    font-size:x-large;
+}
+
+label, input, #text {
+    font-weight: bold;
+}
+
+button#close {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(202, 155, 95, 0.8);
+    color:white;
+    box-shadow: 3px 3px 5px 1px gray;
+    transition: transform 0.3s ease;
+}
+
+button#close:hover {
+    transform: scale(1.05); 
+}
+
+.bookshelf {
+    padding: 0 5%;
 }
